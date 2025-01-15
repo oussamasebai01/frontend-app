@@ -1,0 +1,28 @@
+gitlabUrl: https://gitlab.com/
+runnerRegistrationToken: "glrt-YMrDnsPtgRXp33yKRqAa"
+rbac:
+  create: true
+runners:
+  config: |
+    [[runners]]
+      [runners.kubernetes]
+        namespace = "gitlab-runner"
+        image = "alpine:latest"
+        resources = {
+          requests = { memory = "256Mi", cpu = "100m" },
+          limits = { memory = "512Mi", cpu = "200m" }
+        }
+        timeout = 2h  # Increase the timeout here
+  privileged: true
+  namespace: "gitlab-runner"
+  serviceAccountName: "gitlab-runner"
+  image: "alpine:latest"
+  resources:
+    requests:
+      memory: "256Mi"
+      cpu: "100m"
+    limits:
+      memory: "512Mi"
+      cpu: "200m"
+  environment:
+  - FF_USE_LEGACY_KUBERNETES_EXECUTION_STRATEGY=true
