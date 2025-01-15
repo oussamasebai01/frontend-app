@@ -58,9 +58,7 @@ const NotificationSection = () => {
 
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState('');
-  /**
-   * anchorRef is used on different componets and specifying one type leads to other components throwing an error
-   * */
+  
   const anchorRef = useRef(null);
 
   const handleToggle = () => {

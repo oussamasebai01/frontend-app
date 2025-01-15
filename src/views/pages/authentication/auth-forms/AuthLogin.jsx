@@ -35,8 +35,6 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
 import Google from 'assets/images/icons/social-google.svg';
 
-// ============================|| FIREBASE - LOGIN ||============================ //
-
 const AuthLogin = ({ ...others }) => {
   const theme = useTheme();
   const matchDownSM = useMediaQuery(theme.breakpoints.down('md'));
@@ -104,10 +102,6 @@ const AuthLogin = ({ ...others }) => {
           password: '',
           submit: null
         }}
-        /*validationSchema={Yup.object().shape({
-           email: Yup.string().email('Must be a valid email').max(255).required('Email is required'),
-           password: Yup.string().max(255).required('Password is required')
-        })}*/
         onSubmit={handleSubmit}
       >
         {({ errors, handleBlur, handleChange, handleSubmit, isSubmitting, touched, values }) => (
@@ -173,9 +167,18 @@ const AuthLogin = ({ ...others }) => {
 
             <Box sx={{ mt: 2 }}>
               <AnimateButton>
-                <Button disableElevation disabled={isSubmitting} fullWidth size="large" type="submit" variant="contained" color="success">
-                  Sign in
-                </Button>
+              <Button
+  disableElevation
+  disabled={isSubmitting}
+  fullWidth
+  size="large"
+  type="submit"
+  variant="contained"
+  sx={{ backgroundColor: 'orange', '&:hover': { backgroundColor: 'darkorange' } }}
+>
+  Sign in
+</Button>
+
               </AnimateButton>
             </Box>
           </form>

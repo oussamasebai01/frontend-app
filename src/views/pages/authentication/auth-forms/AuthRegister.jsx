@@ -278,11 +278,17 @@ const AuthRegister = ({ ...others }) => {
             )}
 
             <Box sx={{ mt: 2 }}>
-              <AnimateButton>
-                <Button disableElevation disabled={isSubmitting} fullWidth size="large" type="submit" variant="contained" color="secondary">
-                  Sign up
-                </Button>
-              </AnimateButton>
+            <Button
+  disableElevation
+  disabled={isSubmitting}
+  fullWidth
+  size="large"
+  type="submit"
+  variant="contained"
+  sx={{ backgroundColor: 'orange', '&:hover': { backgroundColor: 'darkorange' } }}
+>
+  Sign Up
+</Button>
             </Box>
           </form>
         )}
